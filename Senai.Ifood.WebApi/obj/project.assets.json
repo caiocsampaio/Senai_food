@@ -3215,7 +3215,7 @@
           "lib/netstandard1.3/System.ComponentModel.dll": {}
         }
       },
-      "System.ComponentModel.Annotations/4.4.0": {
+      "System.ComponentModel.Annotations/4.4.1": {
         "type": "package",
         "compile": {
           "ref/netcoreapp2.0/_._": {}
@@ -4745,6 +4745,35 @@
         },
         "runtime": {
           "lib/netstandard1.3/Microsoft.WindowsAzure.Storage.dll": {}
+        }
+      },
+      "Senai.Ifood.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "System.ComponentModel.Annotations": "4.4.1"
+        },
+        "compile": {
+          "bin/placeholder/Senai.Ifood.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Senai.Ifood.Domain.dll": {}
+        }
+      },
+      "Senai.Ifood.Repository/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "2.0.1",
+          "Microsoft.EntityFrameworkCore.Relational": "2.0.1",
+          "Microsoft.EntityFrameworkCore.SqlServer": "2.0.1",
+          "Senai.Ifood.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Senai.Ifood.Repository.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Senai.Ifood.Repository.dll": {}
         }
       }
     }
@@ -8334,10 +8363,10 @@
         "system.componentmodel.nuspec"
       ]
     },
-    "System.ComponentModel.Annotations/4.4.0": {
-      "sha512": "29K3DQ+IGU7LBaMjTo7SI7T7X/tsMtLvz1p56LJ556Iu0Dw3pKZw5g8yCYCWMRxrOF0Hr0FU0FwW0o42y2sb3A==",
+    "System.ComponentModel.Annotations/4.4.1": {
+      "sha512": "ToiYqSCioqhtspq2O/jYKtyTC/T0uwWHBTYlzCi6PRbSSHArN1IaRWeHffDamvms5sye5FDUWCfNZgubQpNRsA==",
       "type": "package",
-      "path": "system.componentmodel.annotations/4.4.0",
+      "path": "system.componentmodel.annotations/4.4.1",
       "files": [
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
@@ -8413,7 +8442,7 @@
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
         "ref/xamarinwatchos10/_._",
-        "system.componentmodel.annotations.4.4.0.nupkg.sha512",
+        "system.componentmodel.annotations.4.4.1.nupkg.sha512",
         "system.componentmodel.annotations.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
@@ -12525,12 +12554,23 @@
         "windowsazure.storage.8.1.4.nupkg.sha512",
         "windowsazure.storage.nuspec"
       ]
+    },
+    "Senai.Ifood.Domain/1.0.0": {
+      "type": "project",
+      "path": "../Senai.Ifood.Domain/Senai.Ifood.Domain.csproj",
+      "msbuildProject": "../Senai.Ifood.Domain/Senai.Ifood.Domain.csproj"
+    },
+    "Senai.Ifood.Repository/1.0.0": {
+      "type": "project",
+      "path": "../Senai.Ifood.Repository/Senai.Ifood.Repository.csproj",
+      "msbuildProject": "../Senai.Ifood.Repository/Senai.Ifood.Repository.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.0": [
       "Microsoft.AspNetCore.All >= 2.0.3",
-      "Microsoft.NETCore.App >= 2.0.0"
+      "Microsoft.NETCore.App >= 2.0.0",
+      "Senai.Ifood.Repository >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -12560,7 +12600,11 @@
       },
       "frameworks": {
         "netcoreapp2.0": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\caioc\\Documents\\SENAI\\Senai.Ifood.Solution\\Senai.Ifood.Repository\\Senai.Ifood.Repository.csproj": {
+              "projectPath": "C:\\Users\\caioc\\Documents\\SENAI\\Senai.Ifood.Solution\\Senai.Ifood.Repository\\Senai.Ifood.Repository.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

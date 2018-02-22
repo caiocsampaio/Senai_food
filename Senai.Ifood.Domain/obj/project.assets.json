@@ -278,11 +278,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\caioc\\Documents\\SENAI\\Senai.Ifood.Solution\\Senai.Ifood.Domain\\Senai.Ifood.Domain.csproj",
+      "projectUniqueName": "C:\\Users\\caioc\\Documents\\SENAI\\Senai.Ifood.Solution\\Senai.Ifood.Domain\\Senai.Ifood.Domain.csproj",
       "projectName": "Senai.Ifood.Domain",
-      "projectPath": "c:\\Users\\caioc\\Documents\\SENAI\\Senai.Ifood.Solution\\Senai.Ifood.Domain\\Senai.Ifood.Domain.csproj",
+      "projectPath": "C:\\Users\\caioc\\Documents\\SENAI\\Senai.Ifood.Solution\\Senai.Ifood.Domain\\Senai.Ifood.Domain.csproj",
       "packagesPath": "C:\\Users\\caioc\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\caioc\\Documents\\SENAI\\Senai.Ifood.Solution\\Senai.Ifood.Domain\\obj\\",
+      "outputPath": "C:\\Users\\caioc\\Documents\\SENAI\\Senai.Ifood.Solution\\Senai.Ifood.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
