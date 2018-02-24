@@ -32,8 +32,10 @@ namespace Senai.Ifood.Repository.Repositories
         {
             try
             {
+                //para pegar o id, primeiro é necessário definir 
+                //  onde está o id em cada classe pelo método de FindPrimaryKey:
                 var keyProperty = _context.Model.FindEntityType(typeof(T)).FindPrimaryKey().Properties[0];
-	
+
                 return _context.Set<T>().FirstOrDefault(e => EF.Property<int>(e, keyProperty.Name) == id);
             }
             catch (Exception ex)

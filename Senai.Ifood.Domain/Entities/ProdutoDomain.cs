@@ -10,7 +10,6 @@ namespace Senai.Ifood.Domain.Entities
         [StringLength(30, MinimumLength = 4)]
         public string Nome { get; set; }
 
-        [Required]
         [StringLength(50, MinimumLength = 4)]
         public string Descricao { get; set; }
 

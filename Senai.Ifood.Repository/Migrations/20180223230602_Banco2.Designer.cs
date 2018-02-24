@@ -11,9 +11,10 @@ using System;
 namespace Senai.Ifood.Repository.Migrations
 {
     [DbContext(typeof(IFoodContext))]
-    partial class IFoodContextModelSnapshot : ModelSnapshot
+    [Migration("20180223230602_Banco2")]
+    partial class Banco2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -88,6 +89,7 @@ namespace Senai.Ifood.Repository.Migrations
                     b.Property<DateTime>("DataCriacao");
 
                     b.Property<string>("Descricao")
+                        .IsRequired()
                         .HasMaxLength(50);
 
                     b.Property<string>("Nome")
@@ -114,7 +116,7 @@ namespace Senai.Ifood.Repository.Migrations
 
                     b.Property<string>("Email")
                         .IsRequired()
-                        .HasMaxLength(100);
+                        .HasMaxLength(40);
 
                     b.Property<int>("EspecialidadeId");
 

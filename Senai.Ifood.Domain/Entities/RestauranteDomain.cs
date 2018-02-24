@@ -14,16 +14,14 @@ namespace Senai.Ifood.Domain.Entities
         [StringLength(30, MinimumLength = 5)]
         public string Responsavel { get; set; }
 
-        [Required]
         [StringLength(40, MinimumLength = 5)]
         public string Site { get; set; }
 
-        [Required]
         [StringLength(11, MinimumLength = 10)]
         public string Telefone { get; set; }
 
         [Required]
-        [StringLength(40, MinimumLength = 5)]
+        [StringLength(100, MinimumLength = 5)]
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 

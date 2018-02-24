@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Senai.Ifood.Domain.Contracts;
 using Senai.Ifood.Repository.Context;
+using Senai.Ifood.Repository.Repositories;
 using static Microsoft.AspNetCore.Hosting.Internal.HostingApplication;
 
 namespace Senai.Ifood.WebApi
@@ -27,6 +30,14 @@ namespace Senai.Ifood.WebApi
         {
             services.AddDbContext<IFoodContext>(options => 
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
+            
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                    .AddCookie(options => {
+                        options.LoginPath = "/Conta/Login";
+                    });
+                    
             services.AddMvc();
         }
 
@@ -38,12 +49,11 @@ namespace Senai.Ifood.WebApi
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseMvc();
+            app.UseAuthentication();
 
-            app.Run(async (context) =>
-            {
-                await context.Response.WriteAsync("Hello World!");
-            });
+            app.UseStaticFiles();
+
+            app.UseMvc();
         }
     }
 }
