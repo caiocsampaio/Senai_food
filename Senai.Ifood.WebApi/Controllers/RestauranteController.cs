@@ -18,8 +18,8 @@ namespace Senai.Ifood.WebApi.Controllers
         }
 
         [HttpGet]
-        public IActionResult Listar(){
-            return Ok(_repo.Listar());
+        public IActionResult GetAction(){
+            return Ok(_repo.Listar(new string[]{"Produtos"}));
         }
 
         [HttpGet("{id}")]

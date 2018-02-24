@@ -28,7 +28,7 @@ namespace Senai.Ifood.Repository.Repositories
             }
         }
 
-        public T BuscarPorId(int id)
+        public T BuscarPorId(int id, string[] includes = null)
         {
             try
             {
@@ -69,12 +69,21 @@ namespace Senai.Ifood.Repository.Repositories
             throw new System.NotImplementedException();
         }
 
-        public IEnumerable<T> Listar()
+        public IEnumerable<T> Listar(string[] includes = null)
         {
             try{
-                var lista_dados = _context.Set<T>().ToList();
+                //adicionar classes ao query para fazer join de classes/tabelas
+                var query = _context.Set<T>().AsQueryable();
 
-                return lista_dados; 
+                if(includes == null)
+                    return query.ToList();
+                
+                foreach (var item in includes)
+                {
+                    query = query.Include(item);
+                }
+
+                return query.ToList();
             }
             catch(Exception ex){
                 throw new Exception(ex.Message);
